@@ -1,4 +1,4 @@
-# TP Nro 2: Consumo de APIs, Headless CMS y Visualización de Datos
+# TP Nro 2: Strapi
 **Asignatura:** Tecnología y Gestión Web  
 **Universidad:** UTN - Facultad Regional La Plata (FRLP)  
 **Carrera:** Ingeniería en Sistemas de Información  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP Nro 2 - Grupo 22</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>TP Nro 2 - Grupo 22</h1>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <nav>
+                <button onclick="mostrarSeccion('cargar')">Cargar datos de APIs</button>
+                <button onclick="mostrarSeccion('visualizar')">Visualizar datos</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="seccion-cargar" class="seccion activa">
+                <h2>Cargar Top 3 Películas por Año</h2>
+                <div class="form-group">
+                    <input type="number" id="input-anio" placeholder="Ej: 2024" min="1900" max="2026">
+                    <button onclick="buscarYGuardar()">Buscar y Guardar en Strapi</button>
+                </div>
+                <div id="mensaje-estado" class="mensaje"></div>
+                <div id="vista-previa" class="vista-previa"></div>
+            </section>
+
+            <section id="seccion-visualizar" class="seccion">
+                <h2>Visualización de Datos Almacenados</h2>
+                <button class="btn-actualizar" onclick="cargarDatosStrapi()">Actualizar Tablero</button>
+
+                <div class="contenedor-grafico">
+                    <canvas id="graficoPopularidad"></canvas>
+                </div>
+
+                <table class="tabla-peliculas">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Título</th>
+                            <th>Popularidad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>TygWeb 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

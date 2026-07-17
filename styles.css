@@ -1,0 +1,273 @@
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #1e1e26;
+    height: 8vh;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #333;
+}
+
+.header h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #eeeeee;
+    letter-spacing: 1px;
+}
+
+/* Layout y contenedor principal */
+.main-container {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
+/* Menú lateral */
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    padding: 20px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav button {
+    display: block;
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #eeeeee;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar nav button:hover {
+    background: rgba(0, 173, 181, 0.15);
+    border-color: #00adb5;
+    color: #00adb5;
+    transform: translateX(3px);
+}
+
+/* Sección de contenido */
+.content {
+    flex: 1;
+    padding: 30px 40px;
+    width: calc(100% - 240px);
+    overflow-y: auto;
+}
+
+.content section {
+    width: 100%;
+    padding: 0;
+}
+
+.seccion {
+    display: none;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+h2 {
+    color: #00adb5;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+}
+
+p {
+    color: #eeeeee;
+}
+
+/* Componentes de formulario y botones */
+.form-group {
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input[type="number"] {
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 180px;
+    background-color: #1e1e26;
+    border: 1px solid #333;
+    color: #eeeeee;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #00adb5;
+    box-shadow: 0 0 5px rgba(0, 173, 181, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    background-color: #00adb5;
+    color: #121212;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #008c93;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-actualizar {
+    margin: 15px 0;
+}
+
+.mensaje {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Tarjetas de resultados */
+.vista-previa {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.card-pelicula {
+    background: #1e1e26;
+    border: 1px solid #333;
+    border-left: 4px solid #00adb5;
+    color: #eeeeee;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-pelicula h3 {
+    color: #00adb5;
+    margin-bottom: 8px;
+}
+
+/* Gráfico y tabla de datos */
+.contenedor-grafico {
+    background: #1e1e26;
+    border: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    height: 420px;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.contenedor-grafico canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.tabla-peliculas {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e1e26;
+    color: #eeeeee;
+    border: 1px solid #333;
+    margin-top: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tabla-peliculas th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #00adb5;
+    padding: 14px;
+    border: 1px solid #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.tabla-peliculas td {
+    padding: 14px;
+    border: 1px solid #333;
+    color: #eeeeee;
+}
+
+.tabla-peliculas tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tabla-peliculas tbody tr:hover {
+    background-color: rgba(0, 173, 181, 0.05);
+}
+
+/* Footer */
+.footer {
+    background: #1e1e26;
+    display: flex;
+    height: 7vh;
+    min-height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 25px;
+    border-top: 1px solid #333;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+    color: #eeeeee;
+    font-size: 0.9rem;
+}
